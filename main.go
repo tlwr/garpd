@@ -42,6 +42,8 @@ func main() {
 		log.Fatalf("no interfaces for which to send gratuitous ARP requests")
 	}
 
+	log.Printf("using %s as interval", interval)
+
 	immediate := time.After(0 * time.Second)
 
 	for {
