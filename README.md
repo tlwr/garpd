@@ -3,7 +3,7 @@
 Gratuitous ARP daemon written in Go
 
 A small utility for sending gratuitous ARP requests as per
-[RFC522y](https://tools.ietf.org/html/rfc5227#page-15).
+[RFC522](https://tools.ietf.org/html/rfc5227#page-15).
 
 
 ## Usage
