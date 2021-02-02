@@ -67,6 +67,10 @@ func garp(inf net.Interface) error {
 		ipv4AddressSize     uint8 = 4
 	)
 
+	var (
+		sent = 0
+	)
+
 	addrs, err := inf.Addrs()
 	if err != nil {
 		return err
@@ -126,8 +130,13 @@ func garp(inf net.Interface) error {
 				log.Printf("error writing packet for inf (%s) for ip (%s): %s", inf.Name, ip, err)
 				return
 			}
+
+			log.Printf("garp inf (%s) sent ARP request for %s", inf.Name, ip)
+			sent += 1
 		}()
 	}
+
+	log.Printf("garp inf (%s) sent %d ARP requests", inf.Name, sent)
 
 	return nil
 }
