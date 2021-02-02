@@ -44,3 +44,10 @@ an IP address was allocated.
 * Only works for Unix systems.
 * Requires `CAP_NET_RAW` on linux systems
 * Requires `root` on non-linux systems
+
+## Debugging
+
+```
+# tcpdump is your friend
+sudo tcpdump -i any -XXn arp
+```
